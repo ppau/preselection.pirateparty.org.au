@@ -60,11 +60,10 @@ class PreselectionHandler(RequestHandler):
             for k, v in x.items():
                 if heading == "Candidate Questions":
                     answers.append("%s\n%s\n" % (k, self.get_argument(v, "")))
-                    continue
                 elif heading == "Submission":
                     answers.append("%s\n%s\n" % (k, "Yes" if self.get_argument(v, "") == "on" else "No"))
-                    continue
-                answers.append("%s: %s" % (k, self.get_argument(v, "")))
+                else:
+                    answers.append("%s: %s" % (k, self.get_argument(v, "")))
 
         name = self.get_argument("name")
         text = "\n".join(answers).strip()
