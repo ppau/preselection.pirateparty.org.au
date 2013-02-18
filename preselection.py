@@ -4,6 +4,7 @@ import logging
 
 from collections import OrderedDict
 from tornado.web import HTTPError, RequestHandler, StaticFileHandler
+from tornado.httpserver import HTTPServer
 from bbqutils.email import Mailer, create_attachment
 
 class Application(tornado.web.Application):
@@ -85,5 +86,6 @@ if __name__ == "__main__":
         (r"/", PreselectionHandler),
         (r"/static/(.*)", StaticFileHandler, {"path": "static"})
     ])
-    application.listen(12013)
+    serv = HTTPServer(application, xheaders=True)
+    serv.listen(12013)
     tornado.ioloop.IOLoop.instance().start()
