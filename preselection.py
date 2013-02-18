@@ -63,6 +63,7 @@ class PreselectionHandler(RequestHandler):
                     continue
                 elif heading == "Submission":
                     answers.append("%s\n%s\n" % (k, "Yes" if self.get_argument(v, "") == "on" else "No"))
+                    continue
                 answers.append("%s: %s" % (k, self.get_argument(v, "")))
 
         name = self.get_argument("name")
