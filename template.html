@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Pirate Party Australia - Preselection Nomination Form 2013</title>
+        <link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+        <meta name="robots" content="noindex,nofollow">
+        <style>
+          textarea { width: 600px; }
+        </style>
+    </head>
+    <body>
+        <div class='container'>
+            <div class="page-header">
+                <h1>
+                    Pirate Party Australia
+                    <small>Preselection Nomination Form 2013</small>
+                </h1>
+            </div>
+            <div class="alert">
+                <strong>There are mandatory attachments required in this form. You will need:</strong>
+                <ul>
+                    <li>A photo of yourself</li>
+                    <li>A resume/CV</li>
+                    <li>A police background check</li>
+                </ul>
+                If you have any issues completing this form, contact the National Council at <a href="mailto:nationalcouncil@pirateparty.org.au">nationalcouncil@pirateparty.org.au</a>.
+            </div>
+            <form method='post' enctype="multipart/form-data">
+                <fieldset name="details">
+                    <legend>Candidate Details</legend>
+                    <div class="alert alert-info">
+                        <p>This information is used for identification purposes only and will not be made public.</p>
+                        <strong>All fields are required.</strong>
+                    </div>
+                    <div class="control-group">
+                        <label for="name">Full Name</label>
+                        <input type='text' id='name' name='name' required>
+                    </div>
+                    <div class="control-group">
+                        <label for="phone">Phone</label>
+                        <input type='text' id='phone' name='phone' required>
+                    </div>
+                    <div class="control-group">
+                        <label for="email">Email</label>
+                        <input type='email' id='email' name='email' required>
+                    </div>
+                </fieldset>
+                <fieldset name="nomination">
+                    <legend>Nomination</legend>
+                    <div class="alert alert-info">
+                      <p>All candidates must be seconded by another member. If you are having trouble finding someone to second you, consider sending an email to the <a href="http://lists.pirateparty.org.au">party discussion mailing list</a> and you should quickly find somebody to second you.</p>
+                      <div><strong>All fields are required.</strong></div>
+                    </div>
+                    <div class="control-group">
+                        <label for="nom_state">I wish to nominate myself for the Senate preselection in the state of:</label>
+                        <input type="text" id="nom_state" name="nomination_state" required>
+                    </div>
+                    <div class="alert alert-info">
+                        Please enter the name, email and phone number of the person who is seconding you so we may contact them to verify your application.
+                    </div>
+                    <div class="control-group">
+                      <label for="seconder_name">Seconder's Full Name</label>
+                      <input type='text' id="seconder_name" name="seconder_name" required>
+                    </div>
+                    <div class="control-group">
+                      <label for="seconder_phone">Seconder's Phone</label>
+                      <input type='text' id="seconder_phone" name="seconder_phone" required>
+                    </div>
+                    <div class="control-group">
+                      <label for="seconder_email">Seconder's Email</label>
+                      <input type='text' id="seconder_email" name="seconder_email" required>
+                    </div>
+                </fieldset>
+                <fieldset name="profile_questions">
+                    <legend>Candidate Profile Questions</legend>
+                    <div class="alert alert-info">
+                        <p>This information will be used for informing your fellow members
+                        of why they should select you to run for Parliament on behalf of 
+                        Pirate Party Australia.</p>
+                        <strong>All fields are required.</strong>
+                    </div>
+                    <div class="control-group">
+                        <label for="q1">
+                            Why do you feel that you are qualified for the position for which you have declared your candidacy?
+                            <small>(250 word maximum)</small>
+                        </label>
+                        <textarea rows="5" id="q1" name="q1" required></textarea>
+                    </div>
+                    <div class="control-group">
+                        <label for="q2">
+                            Why are you seeking the position for which you have declared your candidacy?
+                            <small>(250 word maximum)</small>
+                        </label>
+                        <textarea rows="5" id="q2" name="q2" required></textarea>
+                    </div>
+                    <div class="control-group">
+                        <label for="q3">
+                            What experience/contribution have you made so far to the Pirate movement,
+                            and what will you do to advance or better the Party and movement?
+                            <small>(250 word maximum)</small>
+                        </label>
+                        <textarea rows="5" id="q3" name="q3" required></textarea>
+                    </div>
+                    <div class="control-group">
+                        <label for="q4">
+                            Do you agree with the Pirate Party platform and its ideals? What other political movements or 
+                            parties have you been a part of?
+                            <small>(250 word maximum)</small>
+                        </label>
+                        <textarea rows="5" id="q4" name="q4" required></textarea>
+                    </div>
+                    <div class="control-group">
+                        <label for="resume">
+                            Attach a resume, include any leadership positions or political experience, 
+                            work experience and any relevant extra curricular activities. 
+                        </label>
+                        <input type="file" name="resume" id="resume" required>
+                    </div>
+                    <div class="control-group">
+                        <label for="photo">
+                            Attach a picture of yourself.
+                        </label>
+                        <input type="file" name="photo" id="photo" required>
+                    </div>
+                    <div class="control-group">
+                        <label for="background_check">A background check is mandatory. Please attach.</label>
+                        <input type="file" name="background_check" id="background_check" required>
+                    </div>
+                </fieldset>
+                <fieldset name='submission'>
+                    <legend>Submission</legend>
+                    <div class="alert alert-info">
+                        <p><em>All members wishing to run as candidates for Pirate Party Australia must sign a declaration to the effect of:</em></p>
+                        <p>I hereby pledge to advance and adhere to the platform and ideals of Pirate Party Australia, both during the election campaign and upon election to Parliament.</p>
+                        <label class='checkbox' style="color: black" required>I agree to the pledge. <input type="checkbox" name='pledge'></label>
+                    </div>
+                    <div class="control-group alert alert-danger" style="text-align: center">
+                        <p>I understand that it is an offense to knowingly submit false information.</p>
+                        <button class='btn btn-primary' type="submit">Submit</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>
