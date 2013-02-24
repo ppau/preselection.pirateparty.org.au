@@ -3,11 +3,14 @@
     <head>
         <meta charset="utf-8">
         <title>Pirate Party Australia - Preselection Nomination Form 2013</title>
+        <link rel="stylesheet" type="text/css" href="static/logo.css">
+        <link rel="stylesheet" type="text/css" href="static/webfonts.css">
         <link rel="stylesheet" type="text/css" href="static/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="static/bootstrap-responsive.min.css">
         <meta name="robots" content="noindex,nofollow">
         <style>
           textarea { width: 600px; }
+          h4, legend { font-family: "GehenSans"; }
           body { background-color: #0073ae; padding: 0; }
           .container {
             background-color: white;
@@ -20,10 +23,14 @@
     </head>
     <body>
         <div class='container'>
-            <div class="page-header">
+            <div style='min-height: 80px'>
                 <h1>
-                    Pirate Party Australia<br>
-                    <small>Preselection Nomination Form 2013</small>
+                    <a href="http://pirateparty.org.au" class="logo">
+                        <div>
+                            <span class="logo-bold-blue">pirate</span>party
+                        </div>
+                        <div class="logo-australia">Federal Preselection Nomination 2013</div>
+                    </a>
                 </h1>
             </div>
             <div class="alert">
@@ -145,7 +152,7 @@
                         <label class='checkbox' style="color: black" required>I agree to the pledge. <input type="checkbox" name='pledge'></label>
                     </div>
                     <div class="control-group alert alert-danger" style="text-align: center">
-                        <p>I understand that it is an offense to knowingly submit false information.</p>
+                        <p>Please ensure all the data you have entered is correct before hitting submit. It is a serious offence to make a false declaration.</p>
                         <button class='btn btn-primary' type="submit">Submit</button>
                     </div>
                 </fieldset>
