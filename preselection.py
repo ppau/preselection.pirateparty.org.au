@@ -46,7 +46,7 @@ class PreselectionHandler(RequestHandler):
                 ("Why are you seeking the position for which you have declared your candidacy?", "q2"),
                 ("What experience/contribution have you made so far to the Pirate movement, and what will you do to advance or better the Party and movement?", "q3"),
                 ("Do you agree with the Pirate Party platform and its ideals? What other political movements or parties have you been a part of?", "q4"),
-                ("Disclosure of history", "background")
+                ("# Disclosure of history", "background")
             ])),
             ("Submission", {"Pledge agreed to?": "pledge"})
         ])
