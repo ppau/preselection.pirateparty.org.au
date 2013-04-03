@@ -6,6 +6,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 from email.utils import formatdate
 from threading import Lock, Thread
+from subprocess import Popen, PIPE
 
 class Mailer:
 	def __init__(self, host='localhost', port=587, user=None, passwd=None):
@@ -27,7 +28,7 @@ class Mailer:
 	def disconnect(self):
 		return self.server.quit()
 
-	def send_email(self, frm=None, to=None, cc=None, bcc=None, subject=None, text=None, date=None, reply_to=None, attachments=[]):
+	def send_email(self, frm=None, to=None, cc=None, bcc=None, subject=None, text='', date=None, reply_to=None, attachments=[]):
 		x = 0
 		while x < 3:
 			x += 1
@@ -52,6 +53,11 @@ class Mailer:
 			finally:
 				self.lock.release()
 		raise Exception("Failed to send email three times.")
+
+
+def sendmail(mail):
+    p = Popen(["sendmail", "-t"], stdin=PIPE)
+    return p.communicate(mail.as_string())
 
 
 def create_attachment(filename, data, mimetype="application/octet-stream"):

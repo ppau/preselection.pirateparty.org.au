@@ -5,7 +5,7 @@ import logging
 from collections import OrderedDict
 from tornado.web import HTTPError, RequestHandler, StaticFileHandler
 from tornado.httpserver import HTTPServer
-from bbqutils.email import Mailer, create_attachment
+from bbqutils.email import sendmail, create_email, create_attachment
 
 class Application(tornado.web.Application):
     def __init__(self, handlers, **settings):
@@ -18,9 +18,6 @@ class Application(tornado.web.Application):
         t = open('success-template.html')
         self.success_template = t.read()
         t.close()
-
-        self.mailer = Mailer()
-        self.mailer.connect()
 
         self.email_to = "nationalcouncil@pirateparty.org.au"
 
@@ -71,14 +68,15 @@ class PreselectionHandler(RequestHandler):
         text = "\n".join(answers).strip()
         frm = "%s <%s>" % (name, self.get_argument('email'))
 
-        self.application.mailer.send_email(
-            frm=frm,
+        sendmail(create_email(
+            frm=self.application.email_to,
             to=self.application.email_to,
             subject="Preselection Nomination: %s" % name,
             text=text,
             attachments=attachments
-        )
+        ))
 
+        logging.debug(text)
         self.write(self.application.success_template % text)
 
 if __name__ == "__main__":
