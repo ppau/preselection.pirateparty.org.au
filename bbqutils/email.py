@@ -56,7 +56,7 @@ class Mailer:
 
 
 def sendmail(mail):
-    p = Popen(["sendmail", "-t"], stdin=PIPE)
+    p = Popen(["sendmail", "-t", "-i"], stdin=PIPE)
     return p.communicate(mail.as_string().encode())
 
 
