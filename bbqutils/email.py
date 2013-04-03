@@ -57,7 +57,7 @@ class Mailer:
 
 def sendmail(mail):
     p = Popen(["sendmail", "-t"], stdin=PIPE)
-    return p.communicate(mail.as_string())
+    return p.communicate(mail.as_string().encode())
 
 
 def create_attachment(filename, data, mimetype="application/octet-stream"):
